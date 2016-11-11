@@ -1,0 +1,5 @@
+<resources xmlns:xliff="http://schemas.android.com/apk/res-auto">
+    <string name="app_name">RetrofitTest</string>
+    <string name="precipitation_probability"><xliff:g>%1$s</xliff:g>\%</string>
+    <string name="temperature"><xliff:g>%1$s</xliff:g>ºF</string>
+</resources>
