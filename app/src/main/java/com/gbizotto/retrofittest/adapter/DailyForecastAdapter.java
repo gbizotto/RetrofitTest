@@ -22,7 +22,7 @@ import java.util.List;
 
 public class DailyForecastAdapter extends RecyclerView.Adapter<DailyForecastAdapter.ViewHolder> {
 
-    Context mContext;
+    static Context mContext;
     private List<Datum> mDailyList;
 
     public DailyForecastAdapter(Context context, List<Datum> objects) {
@@ -63,7 +63,7 @@ public class DailyForecastAdapter extends RecyclerView.Adapter<DailyForecastAdap
         }
 
         public void bindDatum(Datum datum){
-            this.mDailyForecastViewModel = new DailyForecastViewModel(datum);
+            this.mDailyForecastViewModel = new DailyForecastViewModel(datum, mContext);
             mDailyRowBinding.setDailyViewModel(mDailyForecastViewModel);
             mDailyRowBinding.executePendingBindings();
         }
