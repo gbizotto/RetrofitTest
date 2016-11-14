@@ -1,47 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/dailyDate"
-        android:textStyle="bold"/>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:id="@+id/dailySummary"/>
+    <data>
+        <variable
+            name="dailyViewModel"
+            type="com.gbizotto.retrofittest.viewModel.DailyForecastViewModel"/>
+    </data>
+
 
     <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content">
 
         <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="Min"/>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/dailyDate"
+            android:textStyle="bold"
+            android:text="@{dailyViewModel.date}"/>
 
         <TextView
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:id="@+id/dailyTemperatureMin"/>
+            android:id="@+id/dailySummary"
+            android:text="@{dailyViewModel.summary}"/>
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="Max"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:id="@+id/dailyTemperatureMax"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Min"/>
 
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/dailyTemperatureMin"
+                android:text="@{dailyViewModel.formattedMinTemperature}"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Max"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/dailyTemperatureMax"
+                android:text="@{dailyViewModel.formattedMaxTemperature}"/>
+
+        </LinearLayout>
     </LinearLayout>
-</LinearLayout>
+
+</layout>
