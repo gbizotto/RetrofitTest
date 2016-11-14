@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements AccessActivityInt
     //public static final String BASE_URL = "https://api.darksky.net/forecast/e890138405ec89f522a93c2749773367/37.8267,-122.4233";
     public static final String BASE_URL = "https://api.darksky.net/";
 
-    private static final String API_KEY = "e890138405ec89f522a93c2749773367";
+    private static final String API_KEY = "<API_KEY>";
     private static final String LATITUDE = "37.8267";
     private static final String LONGITUDE = "-122.4233";
     private static final String LATITUDE_LONGITUDE = "37.8267,-122.4233";
