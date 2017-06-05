@@ -1,5 +1,18 @@
 <resources xmlns:xliff="http://schemas.android.com/apk/res-auto">
     <string name="app_name">RetrofitTest</string>
+
+    <!-- Main-->
+    <string name="next">Next</string>
+    <string name="currently">Currently</string>
+    <string name="precipitation_propability">Precipitation probability: </string>
+    <string name="daily">Daily</string>
     <string name="precipitation_probability"><xliff:g>%1$s</xliff:g>\%</string>
+
+    <!-- Using data binding activity -->
+    <string name="change_text">Change text</string>
+
+    <!-- Daily row -->
+    <string name="min_temperature">Min</string>
+    <string name="max_temperature">Max</string>
     <string name="temperature"><xliff:g>%1$s</xliff:g>ºF</string>
 </resources>

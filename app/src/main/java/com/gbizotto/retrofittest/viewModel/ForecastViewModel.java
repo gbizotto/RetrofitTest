@@ -3,25 +3,21 @@ package com.gbizotto.retrofittest.viewModel;
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;
 
-import com.gbizotto.retrofittest.AccessActivityInterface;
+import com.gbizotto.retrofittest.ForecastCallback;
 import com.gbizotto.retrofittest.model.Forecast;
-
-/**
- * Created by gabrielabizotto on 14/11/16.
- */
 
 public class ForecastViewModel extends BaseObservable{
 
     private String summary;
-    private Integer precipitationProbability;
+    private Double precipitationProbability;
 
-    AccessActivityInterface mActivity;
+    private final ForecastCallback mCallback;
 
-    public ForecastViewModel(Forecast forecast, AccessActivityInterface activityInterface) {
+    public ForecastViewModel(Forecast forecast, ForecastCallback callback) {
         summary = forecast.getCurrently().getSummary();
         precipitationProbability = forecast.getCurrently().getPrecipProbability();
 
-        mActivity = activityInterface;
+        mCallback = callback;
     }
 
     @Bindable
@@ -34,15 +30,15 @@ public class ForecastViewModel extends BaseObservable{
     }
 
     @Bindable
-    public Integer getPrecipitationProbability() {
+    public Double getPrecipitationProbability() {
         return precipitationProbability;
     }
 
-    public void setPrecipitationProbability(Integer precipitationProbability) {
+    public void setPrecipitationProbability(Double precipitationProbability) {
         this.precipitationProbability = precipitationProbability;
     }
 
     public String getFormattedPrecipitationProbability(){
-        return mActivity.formatPrecipitaion(precipitationProbability);
+        return mCallback.formatPrecipitation(precipitationProbability);
     }
 }

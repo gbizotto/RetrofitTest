@@ -23,13 +23,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/next"
-            android:text="Next"/>
-
+            android:text="@string/next"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Currently"
+            android:text="@string/currently"
             android:textStyle="bold"/>
 
         <LinearLayout
@@ -52,7 +51,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:text="Precipitation probability: "/>
+                    android:text="@string/precipitation_propability"/>
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -65,7 +64,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Daily"
+            android:text="@string/daily"
             android:textStyle="bold"/>
 
         <LinearLayout
@@ -75,10 +74,7 @@
             <android.support.v7.widget.RecyclerView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/recyclerDailyForecast"
-                />
-
+                android:id="@+id/recyclerDailyForecast"/>
         </LinearLayout>
     </LinearLayout>
-
 </layout>

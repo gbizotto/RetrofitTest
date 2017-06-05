@@ -9,7 +9,7 @@ import java.util.Date;
 
 public interface AccessActivityInterface {
 
-    String formatPrecipitaion(Integer value);
+    String formatPrecipitaion(Double value);
 
     String formatDate(Date date);
 }

@@ -10,17 +10,13 @@ import com.gbizotto.retrofittest.model.Datum;
 
 import java.util.Date;
 
-/**
- * Created by gabrielabizotto on 14/11/16.
- */
-
 public class DailyForecastViewModel extends BaseObservable {
 
     private String summary;
     private Double minTemperature;
     private Double maxTemperature;
     private long date;
-    private Context mContext;
+    private final Context mContext;
 
     public DailyForecastViewModel(Datum datum, Context context) {
         summary = datum.getSummary();
@@ -77,15 +73,4 @@ public class DailyForecastViewModel extends BaseObservable {
         long dateTime = date * 1000;
         return DateFormat.getDateFormat(mContext).format(new Date(dateTime));
     }
-
-
-    /*
-    mCurrentlySummary.setText(forecast.getCurrently().getSummary());
-//                mCurrentlyPrecipProbability.setText(getString(R.string.precipitation_probability, Integer.toString(forecast.getCurrently().getPrecipProbability())));
-//
-//                mDailyForecastAdapter = new DailyForecastAdapter(mContext, R.layout.daily_row,forecast.getDaily().getData());
-//                mLstDailyForecast.setAdapter(mDailyForecastAdapter);
-
-     */
-
 }

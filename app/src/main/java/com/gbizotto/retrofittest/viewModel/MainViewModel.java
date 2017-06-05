@@ -11,7 +11,7 @@ import android.util.Log;
 
 public class MainViewModel extends BaseObservable {
 
-    public  ObservableField<String> name = new ObservableField<>();
+    public final ObservableField<String> name = new ObservableField<>();
 
     public MainViewModel() {
       //  this.name = new ObservableField<>();

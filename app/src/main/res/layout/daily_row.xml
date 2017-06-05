@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
-
     <data>
         <variable
             name="dailyViewModel"
             type="com.gbizotto.retrofittest.viewModel.DailyForecastViewModel"/>
     </data>
-
-
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -36,7 +32,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Min"/>
+                android:text="@string/min_temperature"/>
 
             <TextView
                 android:layout_width="0dp"
@@ -49,7 +45,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Max"/>
+                android:text="@string/max_temperature"/>
 
             <TextView
                 android:layout_width="0dp"
@@ -57,8 +53,6 @@
                 android:layout_weight="1"
                 android:id="@+id/dailyTemperatureMax"
                 android:text="@{dailyViewModel.formattedMaxTemperature}"/>
-
         </LinearLayout>
     </LinearLayout>
-
 </layout>
