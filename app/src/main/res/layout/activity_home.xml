@@ -10,17 +10,8 @@
         android:id="@+id/activity_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingBottom="@dimen/activity_vertical_margin"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin"
+        android:padding="@dimen/using_data_container_padding"
         android:orientation="vertical">
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/next"
-            android:text="@string/next"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -54,7 +45,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:id="@+id/currentlyPrecipProbability"
-                    android:text="@{viewMode.formattedPrecipitationProbability}"/>
+                    android:text="@{viewModel.formattedPrecipitationProbability}"/>
             </LinearLayout>
         </LinearLayout>
 

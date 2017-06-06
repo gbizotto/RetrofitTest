@@ -1,8 +1,8 @@
 package com.gbizotto.retrofittest
 
 import android.databinding.DataBindingUtil
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.text.format.DateFormat
@@ -66,10 +66,10 @@ class HomeActivity : AppCompatActivity(), ForecastCallback {
             }
 
             override fun onResponse(call: Call<Forecast>?, response: Response<Forecast>?) {
-                val forecast: Forecast = response!!.body()
+                val forecast: Forecast? = response?.body()
                 val viewModel: HomeViewModel = HomeViewModel(forecast, callback)
                 mBinding?.viewModel = viewModel
-                initializeRecyclerView(forecast.daily!!.data)
+                initializeRecyclerView(forecast?.daily!!.data)
             }
         })
     }

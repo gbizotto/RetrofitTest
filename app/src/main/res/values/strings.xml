@@ -2,14 +2,10 @@
     <string name="app_name">RetrofitTest</string>
 
     <!-- Main-->
-    <string name="next">Next</string>
     <string name="currently">Currently</string>
     <string name="precipitation_propability">Precipitation probability: </string>
     <string name="daily">Daily</string>
     <string name="precipitation_probability"><xliff:g>%1$s</xliff:g>\%</string>
-
-    <!-- Using data binding activity -->
-    <string name="change_text">Change text</string>
 
     <!-- Daily row -->
     <string name="min_temperature">Min</string>

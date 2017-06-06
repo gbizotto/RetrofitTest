@@ -5,7 +5,7 @@ import android.databinding.Bindable
 import com.gbizotto.retrofittest.ForecastCallback
 import com.gbizotto.retrofittest.model.Forecast
 
-class HomeViewModel(forecast: Forecast, callback: ForecastCallback) : BaseObservable() {
+class HomeViewModel(forecast: Forecast?, callback: ForecastCallback) : BaseObservable() {
 
     @get:Bindable
     var summary: String? = null
@@ -14,8 +14,8 @@ class HomeViewModel(forecast: Forecast, callback: ForecastCallback) : BaseObserv
     val mCallback: ForecastCallback
 
     init {
-        summary = forecast.currently?.summary
-        precipitationProbability = forecast.currently?.precipProbability
+        summary = forecast?.currently?.summary
+        precipitationProbability = forecast?.currently?.precipProbability
         mCallback = callback
     }
 
