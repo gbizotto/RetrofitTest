@@ -24,7 +24,7 @@ import java.util.*
 class HomeActivity : AppCompatActivity(), ForecastCallback {
 
     val BASE_URL = "https://api.darksky.net/"
-    val API_KEY = ""
+    val API_KEY = "e890138405ec89f522a93c2749773367"
     val LATITUDE_LONGITUDE = "-30.014735,-51.1951453"
 
     val mRecyclerView by bindView<RecyclerView>(R.id.recyclerDailyForecast)

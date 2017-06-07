@@ -1,6 +1,8 @@
 package com.gbizotto.retrofittest.model
 
-class Datum {
+import java.io.Serializable
+
+class Datum : Serializable {
 
     var time: Long = 0
     var summary: String? = null
