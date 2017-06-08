@@ -6,18 +6,19 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.gbizotto.retrofittest.Forward
 
 import com.gbizotto.retrofittest.R
 import com.gbizotto.retrofittest.databinding.DailyRowBinding
 import com.gbizotto.retrofittest.model.Datum
 import com.gbizotto.retrofittest.viewModel.DailyForecastViewModel
 
-class DailyForecastAdapter(private val mContext: Context, private val mDailyList: List<Datum>) : RecyclerView.Adapter<DailyForecastAdapter.ViewHolder>() {
+class DailyForecastAdapter(private val mContext: Context, private val mDailyList: List<Datum>, private val forward: Forward) : RecyclerView.Adapter<DailyForecastAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val layoutInflater = LayoutInflater.from(mContext)
         val binding = DataBindingUtil.inflate<DailyRowBinding>(layoutInflater, R.layout.daily_row, parent, false)
-        return ViewHolder(binding.root, binding, mContext)
+        return ViewHolder(binding.root, binding, mContext, forward)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -29,11 +30,11 @@ class DailyForecastAdapter(private val mContext: Context, private val mDailyList
         return mDailyList.size
     }
 
-    class ViewHolder(itemView: View, private val mDailyRowBinding: DailyRowBinding, private val mContext: Context) : RecyclerView.ViewHolder(itemView) {
+    class ViewHolder(itemView: View, private val mDailyRowBinding: DailyRowBinding, private val mContext: Context, private val forward: Forward) : RecyclerView.ViewHolder(itemView) {
         private var mDailyForecastViewModel: DailyForecastViewModel? = null
 
         fun bindDatum(datum: Datum) {
-            this.mDailyForecastViewModel = DailyForecastViewModel(datum, mContext)
+            this.mDailyForecastViewModel = DailyForecastViewModel(datum, mContext, forward)
             mDailyRowBinding.dailyViewModel = mDailyForecastViewModel
             mDailyRowBinding.executePendingBindings()
         }

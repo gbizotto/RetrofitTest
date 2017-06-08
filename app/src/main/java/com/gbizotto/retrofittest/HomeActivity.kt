@@ -1,5 +1,6 @@
 package com.gbizotto.retrofittest
 
+import android.content.Intent
 import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
@@ -21,7 +22,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.*
 
-class HomeActivity : AppCompatActivity(), ForecastCallback {
+class HomeActivity : AppCompatActivity(), ForecastCallback, Forward {
 
     val BASE_URL = "https://api.darksky.net/"
     val API_KEY = "e890138405ec89f522a93c2749773367"
@@ -52,7 +53,7 @@ class HomeActivity : AppCompatActivity(), ForecastCallback {
         linearLayoutManager!!.orientation = LinearLayoutManager.VERTICAL
 
         mRecyclerView.layoutManager = LinearLayoutManager(this)
-        val dailyForecastAdapter: DailyForecastAdapter? = DailyForecastAdapter(this, dailies)
+        val dailyForecastAdapter: DailyForecastAdapter? = DailyForecastAdapter(this, dailies, this)
         mRecyclerView.adapter = dailyForecastAdapter
     }
 
@@ -82,4 +83,10 @@ class HomeActivity : AppCompatActivity(), ForecastCallback {
                     .build()
                     .create(DarkSkyApi::class.java)
         }
+
+    override fun forwardToNext(datum: Datum) {
+        var intent = Intent(this, DetailActivity::class.java)
+        intent.putExtra(getString(R.string.intent_details_datum), datum)
+        startActivity(intent)
+    }
 }

@@ -13,15 +13,15 @@ class DetailViewModel(datum: Datum?, context: Context) : BaseObservable() {
 
     val rangeCelsius: String
         get() {
-            return context.getString(R.string.temperature_range_celsius, convertToCelsius(minimunTemperature), convertToCelsius(maximunTemperature))
+            return context.getString(R.string.temperature_range_celsius, convertToCelsius(minimunTemperature)?.toString(), convertToCelsius(maximunTemperature)?.toString())
         }
 
     val rangeFarenheit: String
         get() {
-            return context.getString(R.string.temperature_range_celsius, minimunTemperature, maximunTemperature)
+            return context.getString(R.string.temperature_range_farenheit, minimunTemperature?.toString(), maximunTemperature?.toString())
         }
 
-    private fun convertToCelsius(temperature: Double?): Double? {
-        return ((temperature?.minus(32))?.times(5))?.div(9)
+    private fun convertToCelsius(temperature: Double?): Int? {
+        return ((temperature?.minus(32))?.times(5))?.div(9)?.toInt()
     }
 }

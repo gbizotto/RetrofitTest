@@ -14,7 +14,7 @@
 
     <!-- Detail -->
     <string name="temperature_label">Temperature: </string>
-    <string name="temperature_range_celsius"><xliff:g>%1$d</xliff:g>ºC - <xliff:g>%2$d</xliff:g>ºC</string>
+    <string name="temperature_range_celsius"><xliff:g>%1$s</xliff:g>ºC - <xliff:g>%2$s</xliff:g>ºC</string>
     <string name="temperature_range_farenheit"><xliff:g>%1$s</xliff:g>ºF - <xliff:g>%2$s</xliff:g>ºF</string>
 
     <!-- Intents keys-->
